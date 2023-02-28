@@ -22,7 +22,6 @@ var jsonPicsDemo = Array.prototype.concat.call(jsonPicsWater, jsonPicsNight);
 var pairsArrayDemo1 = selecterPartRandom(offsetArrayDemo);
 var pairsArrayDemoS = pairsArrayDemo1;
 
-
 // json文件
 // noise: none, fg, g
 // filter: none, lp, unsh
@@ -36,7 +35,6 @@ var jsonPicsW = getWData();
 var jsonPicsL = getLData();
 var jsonPicsSF = getSFData();
 
-
 //const offSet = jsonPicsN.length;
 
 var jsonColor = Array.prototype.concat.call(
@@ -49,7 +47,6 @@ var jsonColor = Array.prototype.concat.call(
 console.log(jsonColor);
 // var jsonPics = Array.prototype.concat.call(jsonColor, jsonGray);
 var jsonPics = jsonColor;
-
 
 const OFFSET = 7;
 const NUMOfTYPES = 5;
@@ -525,6 +522,12 @@ function resBotton() {
               document.getElementById("RigntPic").style = "display:none";
               document.getElementById("realTest").style =
                 "display:inline-block";
+              document
+                .getElementById("testBody")
+                .setAttribute(
+                  "style",
+                  `background-image: url("../pngPics/MM.png")`
+                );
               document.getElementById("istrct").style = "display:block";
               document.getElementById("css").href = "css/left.css";
               document.getElementById("css").href = "css/right.css";
