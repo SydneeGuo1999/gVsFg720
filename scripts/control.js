@@ -10,6 +10,19 @@ var droppedPairs = "";
 
 // key control
 var keyPressed;
+// Demo文件
+var jsonPicsWater = getWaterData();
+var jsonPicsNight = getNightData();
+var offsetArrayDemo = [
+  jsonPicsWater.length,
+  jsonPicsWater.length + jsonPicsNight.length,
+];
+var jsonPicsDemo = Array.prototype.concat.call(jsonPicsWater, jsonPicsNight);
+// double pairs -Demo
+var pairsArrayDemo1 = selecterPartRandom(offsetArrayDemo);
+var pairsArrayDemoS = pairsArrayDemo1;
+
+
 // json文件
 // noise: none, fg, g
 // filter: none, lp, unsh
@@ -23,50 +36,38 @@ var jsonPicsW = getWData();
 var jsonPicsL = getLData();
 var jsonPicsSF = getSFData();
 
-// grayJson
-var jsonGray = getjsonGray();
-console.log(jsonGray);
-var jsonPicsWater = getWaterData();
-var jsonPicsNight = getNightData();
+
 //const offSet = jsonPicsN.length;
 
 var jsonColor = Array.prototype.concat.call(
   jsonPicsN,
   jsonPicsB,
-  // jsonPicsS,
   jsonPicsW,
   jsonPicsL,
   jsonPicsSF
 );
 console.log(jsonColor);
-var jsonPics = Array.prototype.concat.call(jsonColor, jsonGray);
+// var jsonPics = Array.prototype.concat.call(jsonColor, jsonGray);
+var jsonPics = jsonColor;
 
-var jsonPicsDemo = Array.prototype.concat.call(jsonPicsWater, jsonPicsNight);
+
 const OFFSET = 7;
 const NUMOfTYPES = 5;
 var offsetArray = [OFFSET, 2 * OFFSET, 3 * OFFSET, 4 * OFFSET, 5 * OFFSET];
 console.log(offsetArray);
+/*
 var grayPairsArray1 = colorGrayPairs(OFFSET, NUMOfTYPES);
 var grayPairsArray2 = colorGrayPairs(OFFSET, NUMOfTYPES);
 var grayPairsArray = grayPairsArray1.concat(grayPairsArray2);
 console.log(grayPairsArray);
+*/
+
 // double pairs
 var colorPairsArray1 = selecterPartRandom(offsetArray);
 var colorPairsArray2 = selecterPartRandom(offsetArray);
 var colorPairsArray = colorPairsArray1.concat(colorPairsArray2);
-var pairsArrayS = colorPairsArray.concat(grayPairsArray);
-
-var offsetArrayDemo = [
-  jsonPicsWater.length,
-  jsonPicsWater.length + jsonPicsNight.length,
-];
-
-// double pairs -Demo
-var pairsArrayDemo1 = selecterPartRandom(offsetArrayDemo);
-//var pairsArrayDemo2 = selecterPartRandom(offsetArrayDemo);
-//var pairsArrayDemoS = pairsArrayDemo1.concat(pairsArrayDemo2);
-var pairsArrayDemoS = pairsArrayDemo1;
-//var pairsArrayS = selecterPartRandom(offsetArray) + selecterPartRandom(offsetArray);
+// var pairsArrayS = colorPairsArray.concat(grayPairsArray);
+var pairsArrayS = colorPairsArray;
 console.log(pairsArrayS);
 
 var pairs = pairsArrayS;
